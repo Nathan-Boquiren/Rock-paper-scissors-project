@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(47, 46, 56);
+    transition: all 0.1s ease;
+}
+
+header {
+    text-align: center;
+    padding: 50px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    color: white;
+}
+
+.instructions {
+    font-size: 1.5rem;
+}
+
+#choices-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+}
+
+.choice {
+    background-color: rgb(85, 82, 102);
+    border-radius: 30px;
+    padding: 20px;
+    display: inline-block;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 4rem;
+}
+
+.choice:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+.choice:active {
+    transform: scale(1.15);
+}
+
+
+
+#computer-choice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+
+
+    p {
+        background-color: rgb(85, 82, 102);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.301);
+        padding: 10px 20px;
+        font-size: 2rem;
+        border-radius: 20px;
+        animation: fadeIn 0.2s ease forwards;
+        color: white;
+
+        span {
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+#win-lose-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+
+    p {
+        background-color: white;
+        padding: 10px;
+        border-radius: 20px;
+        font-size: 2rem;
+        font-weight: 600;
+        animation: zoomInRebound 0.2s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
+    }
+}
+
+@keyframes zoomInRebound {
+    0% {
+        transform: scale(0);
+        /* Start small */
+    }
+
+    70% {
+        transform: scale(1.1);
+        /* Overshoot */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Settle to final state */
+    }
+}
